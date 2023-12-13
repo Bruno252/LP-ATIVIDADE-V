@@ -296,12 +296,12 @@ struct Gestaobiblioteca comprar(struct Gestaobiblioteca biblioteca) {
             a();
             printf("Numero do Livro:1\n");
             pratileiraA();
-            printf("Preco:%2.f\n",biblioteca.livroPreco[1]);
+            printf("Preco:R$%2.f\n",biblioteca.livroPreco[1]);
             
             a();
             printf("Numero do Livro:2\n");
             pratileiraB();
-            printf("Preco:%2.f\n",biblioteca.livroPreco[2]);
+            printf("Preco:R$%2.f\n",biblioteca.livroPreco[2]);
             a();
             scanf("%d",&escolha2);
 
@@ -315,7 +315,7 @@ struct Gestaobiblioteca comprar(struct Gestaobiblioteca biblioteca) {
 
             biblioteca.somaLivro+=biblioteca.livroPreco[escolha2];
             limpa();
-            printf("Valor Total antes da compra:%.2f\n",biblioteca.somaLivro);
+            printf("Valor Total antes da compra:R$%.2f\n",biblioteca.somaLivro);
             break;
 
         case 2:
@@ -324,7 +324,7 @@ struct Gestaobiblioteca comprar(struct Gestaobiblioteca biblioteca) {
                 limpa();
                 a();
                 pratileiraA();
-                printf("Preco:%2.f\n",biblioteca.livroPreco[1]);
+                printf("Preco:R$%2.f\n",biblioteca.livroPreco[1]);
                 printf("Quantidade:%d\n",biblioteca.livro1);
                 a();
 
@@ -332,12 +332,12 @@ struct Gestaobiblioteca comprar(struct Gestaobiblioteca biblioteca) {
                 if(biblioteca.livro2>0){
                 a();
                 pratileiraB();
-                printf("Preco:%2.f\n",biblioteca.livroPreco[2]);
+                printf("Preco:R$%2.f\n",biblioteca.livroPreco[2]);
                 printf("Quantidade:%d\n",biblioteca.livro2);
                 a();
 
             }
-            printf("Valor Total da Compra:%.2f\n",biblioteca.somaLivro);
+            printf("Valor Total da Compra:R$%.2f\n",biblioteca.somaLivro);
             }else{
             limpa();
             printf("Nenhum livro foi comprado\n");
@@ -413,12 +413,17 @@ int main() {
 
             break;
 
+        case 4:
+        
+            break;
+        
         default:
             printf("Escolha Invalida");
             break;
         }
 
     } while(escolha!=4);
+    limpa();
     printf("Obrigado e Volte Sempre\n");
     return 0;
 }
