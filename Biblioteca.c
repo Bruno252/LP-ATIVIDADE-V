@@ -69,7 +69,7 @@ struct Gestaobiblioteca {
 
 struct Gestaobiblioteca login(struct Gestaobiblioteca biblioteca) {
     int i;
-    setbuf(stdin,NULL);
+  
     a();
     printf("Usurname:\n");
     a();
@@ -83,7 +83,7 @@ struct Gestaobiblioteca login(struct Gestaobiblioteca biblioteca) {
 
     if(strcmp(biblioteca.usuario,biblioteca.usuarioSalvo)==0 && strcmp(biblioteca.senha,biblioteca.senhaSalvo)==0) {
         biblioteca.i=1;
-        //CadastroLivro(biblioteca);
+       
     } else {
         limpa();
         printf("Username ou Senha errada\n");
@@ -96,7 +96,7 @@ struct Gestaobiblioteca login(struct Gestaobiblioteca biblioteca) {
 void loginECadastro(struct Gestaobiblioteca biblioteca) {
 
     int escolha;
-    //struct Gestaobiblioteca biblioteca;
+    
     biblioteca.i=0;
     do {
         a();
@@ -109,7 +109,7 @@ void loginECadastro(struct Gestaobiblioteca biblioteca) {
 
         case 1:
             limpa();
-            setbuf(stdin,NULL);
+           
             fflush(stdin);
             a();
             printf("Username:\n");
@@ -145,9 +145,9 @@ void loginECadastro(struct Gestaobiblioteca biblioteca) {
 
 
 void CadastroLivro(struct Gestaobiblioteca biblioteca) {
-    //setlocale(LC_ALL, "portuguese");
+    setlocale(LC_ALL, "portuguese");
     fflush(stdin);
-    setbuf(stdin,NULL);
+   
     limpa();
     menu();
     printf("\nDigite o nome do livro que deseja cadastrar: ");
@@ -182,7 +182,7 @@ void CadastroLivro(struct Gestaobiblioteca biblioteca) {
 
 struct Gestaobiblioteca emprestimo(struct Gestaobiblioteca biblioteca)
 {
-    //setlocale(LC_ALL, "portuguese");
+    setlocale(LC_ALL, "portuguese");
 
     int escolha;
     int escolha2;
@@ -207,7 +207,7 @@ struct Gestaobiblioteca emprestimo(struct Gestaobiblioteca biblioteca)
         switch (escolha)
         {
         case 1:
-            setbuf(stdin,NULL);
+           
             printf("Opcoes Disponiveis:\n");
             a();
             printf("Numero do Livro:1\n");
@@ -231,8 +231,8 @@ struct Gestaobiblioteca emprestimo(struct Gestaobiblioteca biblioteca)
                 printf("Este Livro ja foi emprestado\n");
                 a();
             }
-            //printf("Nome do livro:");
-            //fgets(biblioteca.nomelivro[biblioteca.i],sizeof(biblioteca.nomelivro[biblioteca.i]),stdin);
+           
+           
 
             biblioteca.i++;
             break;
@@ -252,9 +252,9 @@ struct Gestaobiblioteca emprestimo(struct Gestaobiblioteca biblioteca)
                     a();
                 }
 
-                // printf("Nome do Livro:%s",biblioteca.nomelivro[q]);
-                //printf("Prazo ate 7 dias para devolucao\n");
-                //printf("\n");
+            
+                
+           
             }
             printf("Prazo ate 7 dias para devolucao\n");
             break;
