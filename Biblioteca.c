@@ -4,14 +4,14 @@
 #include <locale.h>
 
 void pratileiraA() {
-    printf("Livro:a\n");
-    printf("Genero:a\n");
-    printf("Autor:a\n");
+    printf("Livro:Comecando a Programar em C(para leigos)\n");
+    printf("Genero:Informatica e Tecnologia\n");
+    printf("Autor:Dan Gookin\n");
 }
 void pratileiraB() {
-    printf("Livro:b\n");
-    printf("Genero:b\n");
-    printf("Autor:b\n");
+    printf("Livro:Java para Leigos\n");
+    printf("Genero:Informatica e Tecnologia\n");
+    printf("Autor:Barry Burd\n");
 
 }
 
@@ -22,6 +22,7 @@ void a() {
 void limpa()
 {
     fflush(stdin);
+    setbuf(stdin,NULL);
     system("cls || clear");
 }
 
@@ -69,7 +70,7 @@ struct Gestaobiblioteca {
 
 struct Gestaobiblioteca login(struct Gestaobiblioteca biblioteca) {
     int i;
-  
+
     a();
     printf("Usurname:\n");
     a();
@@ -83,12 +84,12 @@ struct Gestaobiblioteca login(struct Gestaobiblioteca biblioteca) {
 
     if(strcmp(biblioteca.usuario,biblioteca.usuarioSalvo)==0 && strcmp(biblioteca.senha,biblioteca.senhaSalvo)==0) {
         biblioteca.i=1;
-       
+
     } else {
         limpa();
         printf("Username ou Senha errada\n");
     }
-    
+
     return biblioteca;
 }
 
@@ -96,7 +97,7 @@ struct Gestaobiblioteca login(struct Gestaobiblioteca biblioteca) {
 void loginECadastro(struct Gestaobiblioteca biblioteca) {
 
     int escolha;
-    
+
     biblioteca.i=0;
     do {
         a();
@@ -109,13 +110,14 @@ void loginECadastro(struct Gestaobiblioteca biblioteca) {
 
         case 1:
             limpa();
-           
+
             fflush(stdin);
+            setbuf(stdin,NULL);
             a();
             printf("Username:\n");
             a();
             fgets(biblioteca.usuarioSalvo,sizeof(biblioteca.usuarioSalvo),stdin);
-            
+
             a();
             printf("Senha:\n");
             a();
@@ -127,6 +129,7 @@ void loginECadastro(struct Gestaobiblioteca biblioteca) {
         case 2:
             limpa();
             fflush(stdin);
+            setbuf(stdin,NULL);
             biblioteca=login(biblioteca);
             break;
 
@@ -147,7 +150,8 @@ void loginECadastro(struct Gestaobiblioteca biblioteca) {
 void CadastroLivro(struct Gestaobiblioteca biblioteca) {
     setlocale(LC_ALL, "portuguese");
     fflush(stdin);
-   
+   setbuf(stdin,NULL);
+
     limpa();
     menu();
     printf("\nDigite o nome do livro que deseja cadastrar: ");
@@ -207,7 +211,7 @@ struct Gestaobiblioteca emprestimo(struct Gestaobiblioteca biblioteca)
         switch (escolha)
         {
         case 1:
-           
+
             printf("Opcoes Disponiveis:\n");
             a();
             printf("Numero do Livro:1\n");
@@ -231,8 +235,8 @@ struct Gestaobiblioteca emprestimo(struct Gestaobiblioteca biblioteca)
                 printf("Este Livro ja foi emprestado\n");
                 a();
             }
-           
-           
+
+
 
             biblioteca.i++;
             break;
@@ -252,9 +256,9 @@ struct Gestaobiblioteca emprestimo(struct Gestaobiblioteca biblioteca)
                     a();
                 }
 
-            
-                
-           
+
+
+
             }
             printf("Prazo ate 7 dias para devolucao\n");
             break;
@@ -297,7 +301,7 @@ struct Gestaobiblioteca comprar(struct Gestaobiblioteca biblioteca) {
             printf("Numero do Livro:1\n");
             pratileiraA();
             printf("Preco:R$%2.f\n",biblioteca.livroPreco[1]);
-            
+
             a();
             printf("Numero do Livro:2\n");
             pratileiraB();
@@ -341,9 +345,9 @@ struct Gestaobiblioteca comprar(struct Gestaobiblioteca biblioteca) {
             }else{
             limpa();
             printf("Nenhum livro foi comprado\n");
-            
+
             }
-            
+
             break;
 
         case 3:
@@ -414,9 +418,9 @@ int main() {
             break;
 
         case 4:
-        
+
             break;
-        
+
         default:
             printf("Escolha Invalida");
             break;
